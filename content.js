@@ -1,18 +1,25 @@
+function clickButton(className) {
+  const button = document.querySelector(className);
+  if (button === null) {
+    return;
+  }
+  button.click();
+}
+
 document.addEventListener('keydown', function onEvent(e) {
   e = e || window.e;
-  // "ctrl+return": click the "submit" button in LeetCode page
-  if (e.ctrlKey && e.keyCode === 13) {
-    document.querySelector('.submit__2ISl').click();
+  // Click the "Submit" button.
+  if (e.ctrlKey && e.key === 'Enter') {
+    clickButton('.custom-submit__2ISl');
   }
 
-  // "ctrl+`": close the 'x' and toggle the Console panel like a pro!
-  if (e.ctrlKey && e.keyCode === 192) {
-    const toClose = document.querySelector('.icon-wrapper__2q8n');
-    if (toClose === null) {
-      // open the Console
-      document.querySelector('.custom-testcase__2ah7').click();
-    } else {
-      toClose.click();
-    }
+  // Close the x (Reset to default).
+  if (e.ctrlKey && e.key === 'x') {
+    clickButton('.icon-wrapper__382i');
+  }
+
+  // Toggle the Console panel like a pro!
+  if (e.ctrlKey && e.key === 'c') {
+    clickButton('.custom-testcase__2ah7');
   }
 });
