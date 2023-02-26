@@ -10,7 +10,7 @@ document.addEventListener('keydown', function onEvent(e) {
   e = e || window.e;
   // Click the "Submit" button.
   if (e.ctrlKey && e.key === 'Enter') {
-    clickButton('.custom-submit__2ISl');
+    clickButton('.submit__2ISl');
   }
 
   // Close the x (Reset to default).
